@@ -1,0 +1,11 @@
+services:
+  processor-container:
+    build:
+      context: ../
+      dockerfile: dockerfile
+    working_dir: /workspace
+    # volumes:
+    #   - type: bind
+    #     source: ../develop/cvs_monthly_master/dbt
+    #     target: /app
+    command: ["tail", "-f", "/dev/null"] # コンテナを永続化

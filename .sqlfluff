@@ -1,0 +1,47 @@
+# マクロのパスを指定
+[sqlfluff:templater:jinja]
+load_macros_from_path = ./sqlfluff_macros/
+
+[sqlfluff]
+dialect = athena
+templater = jinja
+max_line_length = 200
+output_line_length = 200
+sql_file_exts = .sql
+# バイト制限解除
+large_file_skip_byte_limit = 0
+
+exclude_rules = 
+    structure.using,
+    structure.column_order,
+
+[fix_even_unparsable]
+fix_even_unparsable = true
+
+[sqlfluff:indentation]
+indent_unit = space
+tab_space_size = 2
+
+[sqlfluff:rules:layout.long_lines]
+# コメント行は長くても可とする。URLなどが入るため
+# 行の長さに関してコメント行は無視する
+ignore_comment_lines = True 
+# 行の長さに関してコメント句は無視する
+ignore_comment_clauses = True 
+
+[sqlfluff:rules:capitalisation.keywords]
+# 予約語の大文字小文字
+capitalisation_policy = upper
+
+[sqlfluff:rules:capitalisation.functions]
+# 関数名の大文字小文字
+extended_capitalisation_policy = upper
+
+[sqlfluff:rules:capitalisation.literals]
+# リテラル値 (null・true・false) の大文字小文字
+capitalisation_policy = upper
+
+[sqlfluff:rules:capitalisation.types]
+# データ型の大文字小文字
+extended_capitalisation_policy = upper
+
