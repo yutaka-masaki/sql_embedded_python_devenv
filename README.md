@@ -7,4 +7,4 @@ Pythonからの組み込みSQL実装と、SQLのフォーマッタ（SQLFLUFF）
 PC上で環境変数を定義するか、この部分を書き換えて使用してください。
 
 ## コマンド
-ctrl + shift + f -> SQLのフォーマット
+ctrl + alt + f -> SQLのフォーマット
